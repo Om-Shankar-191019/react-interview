@@ -5,3 +5,7 @@
 ## List of Items check
 
     show list of items along with checkbox. if checked then appear delete button and on deletion, remove item.
+
+## Custom Tab
+
+    make multiple tabs to navigate on multiple pages.
