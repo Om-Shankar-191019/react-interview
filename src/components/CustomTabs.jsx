@@ -1,13 +1,13 @@
 // problem statement :
 // make multiple tabs to navigate on multiple pages.
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter,
   Routes,
   Route,
   useNavigate,
-  useParams,
+  NavLink,
   useLocation,
 } from "react-router-dom";
 
@@ -34,6 +34,10 @@ const Homewrapper = () => {
     navigate(path);
     setSelectedPath(path);
   };
+
+  useEffect(() => {
+    setSelectedPath(pathname);
+  }, [pathname]);
   return (
     <div>
       <h1>Custom Tabs</h1>
@@ -63,6 +67,36 @@ const Homewrapper = () => {
           Contact
         </li>
       </ul>
+
+      <div>
+        <h1>Custom Tabs with Nav Links</h1>
+        <nav className="space-x-4">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `${isActive ? "border-b-2 border-red-600" : ""} cursor-pointer`
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `${isActive ? "border-b-2 border-red-600" : ""} cursor-pointer`
+            }
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `${isActive ? "border-b-2 border-red-600" : ""} cursor-pointer`
+            }
+          >
+            Contact
+          </NavLink>
+        </nav>
+      </div>
     </div>
   );
 };
