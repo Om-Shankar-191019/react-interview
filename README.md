@@ -9,3 +9,7 @@
 ## Custom Tab
 
     make multiple tabs to navigate on multiple pages.
+
+## Api Call
+
+    Have a Parent component and in that make a api call, have a child component and in that have a input box taking an id as input and a button . when clicked respective data to be fetched and shown on UI.
