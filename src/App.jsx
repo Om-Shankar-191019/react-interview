@@ -3,6 +3,7 @@ import DynamicDropdown from "./components/DynamicDropdown";
 import ListOfItemsCheck from "./components/ListOfItemsCheck";
 import CustomTabs from "./components/CustomTabs";
 import ApiCallParent from "./components/apiCall/ApiCallParent";
+import ShuffleList from "./components/ShuffleList";
 
 const App = () => {
   return (
@@ -10,7 +11,8 @@ const App = () => {
       {/* <DynamicDropdown /> */}
       {/* <ListOfItemsCheck /> */}
       {/* <CustomTabs /> */}
-      <ApiCallParent />
+      {/* <ApiCallParent /> */}
+      {/* <ShuffleList /> */}
     </div>
   );
 };
