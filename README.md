@@ -17,3 +17,7 @@
 ## Shuffle List
 
     Shuffle array each time on button click and render them.
+
+## Guess Color
+
+    make a rectangle box with some color filled. make 3 buttons. on click of each button , if same color code is clicked , show "correct answer" else "wrong answer". if answer is correct, change the color.
