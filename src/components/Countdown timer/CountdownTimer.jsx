@@ -3,10 +3,12 @@ import "./style.css";
 
 const CountDownTimer = () => {
   const [second, setSecond] = useState(5);
+  const [showPause, setShowPause] = useState(false);
   const intervalRef = useRef(null);
 
   function startInterval() {
     if (intervalRef.current === null) {
+      setShowPause(true);
       intervalRef.current = setInterval(() => {
         setSecond((prev) => {
           if (prev < 1) {
@@ -16,12 +18,11 @@ const CountDownTimer = () => {
           return prev - 1;
         });
       }, 1000);
+    } else {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+      setShowPause(false);
     }
-  }
-
-  function stopInterval() {
-    clearInterval(intervalRef.current);
-    intervalRef.current = null;
   }
 
   useEffect(() => {
@@ -33,11 +34,12 @@ const CountDownTimer = () => {
         <h2>Countdown goes on --</h2>
         <h1>{second}</h1>
         <div className="flex space-x-8">
-          <button className="btn" onClick={startInterval}>
-            start
-          </button>
-          <button className="btn" onClick={stopInterval}>
-            stop
+          <button
+            disabled={second === 0 ? true : false}
+            className="btn"
+            onClick={startInterval}
+          >
+            {showPause && second !== 0 ? "Pause" : "Start"}
           </button>
         </div>
       </div>
